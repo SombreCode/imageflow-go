@@ -1,3 +1,4 @@
+//go:build windows
 // +build windows
 
 package imageflow
@@ -70,6 +71,11 @@ func (job *job) Message(message []byte) error {
 func newJob() job {
 	v := C.imageflow_context_create(3, 0)
 	return job{inner: v}
+}
+
+// Frees the context and C allocations.
+func (j *job) CleanUp() {
+	// TODO
 }
 
 // GetOutput from the context
