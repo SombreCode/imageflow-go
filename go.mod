@@ -1,3 +1,3 @@
-module github.com/imazen/imageflow-go
+module github.com/SombreCode/imageflow-go
 
 go 1.14
