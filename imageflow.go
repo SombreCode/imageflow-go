@@ -20,7 +20,8 @@ func (steps *Steps) Decode(task ioOperation) *Steps {
 	steps.inputs = append(steps.inputs, task)
 	task.setIo(uint(steps.ioID))
 	steps.vertex = append(steps.vertex, decode{
-		IoID: steps.ioID,
+		IoID:     steps.ioID,
+		Commands: []string{"ignore_color_profile_errors"},
 	}.toStep())
 	steps.ioID++
 	steps.last = uint(len(steps.vertex) - 1)

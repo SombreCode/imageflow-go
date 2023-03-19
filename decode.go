@@ -2,7 +2,8 @@ package imageflow
 
 // Decode is used to create a decode node in graph
 type decode struct {
-	IoID int `json:"io_id"`
+	IoID     int         `json:"io_id"`
+	Commands interface{} `json:"commands"`
 }
 
 // toStep is used to convert a Decode to step
